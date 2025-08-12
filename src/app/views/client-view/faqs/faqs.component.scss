@@ -1,0 +1,139 @@
+@use 'src/styles/variables' as *;
+
+.faq-container {
+
+    // ----------------------- Accordion Section -----------------------
+    // Style for each accordion button (the FAQ questions)
+    .accordion-button {
+        font-size: 1.1rem;
+        font-weight: 500;
+
+        // Remove default border + focus ring
+        &:focus {
+        box-shadow: none;
+        border-color: #BFA67A;
+        }
+        
+        // When the accordian is expanded (not collapsed)
+        &:not(.collapsed) {
+            background-color: #BFA67A;
+            color: #ffffff; // Make text more readable
+
+            // Set arrow color when expanded
+            // &::after {
+            //     filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)
+            // }
+        }
+
+        // Hover effect
+        &:hover {
+            background-color: lighten(#BFA67A, 5%);
+            color: #ffffff;
+        }
+
+        // Set arrow color when collapsed
+        &::after {
+            filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)
+        }
+        
+    }
+
+    // Style for the accordion body (the FAQ answers)
+    .accordion-body {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    // Add space between FAQ items
+    .accordion-item {
+        margin-bottom: 1rem;
+    }
+    // ----------------------- Accordion Section Ends-----------------------
+ 
+
+    
+
+
+    // ----------------------- Email Section -----------------------
+    .email-container {
+        width: fit-content;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .email-container .question{
+        font-weight: bold;
+        font-size: 20px;
+    }
+    
+    .button-container {
+        margin: 0 auto;
+        width: fit-content;
+        position: relative;
+    }
+
+    .copy-button {
+        background-color: $color-accent;
+        color: $white;
+        border: none;
+        font-family: $font-body;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: darken($color-accent, 10%);
+        }
+        
+        i {
+            color: $white;
+        }
+    }
+
+    .copied-message {
+        position: absolute;
+        top: 50%;
+        left: 100%; // Push it to the right of the button
+        transform: translate(10px, -50%); // Center vertically and offset horizontally
+        padding: 4px 10px;
+        background-color: $color-secondary;
+        color: $white;
+        border-radius: 4px;
+        font-size: 14px;
+        white-space: nowrap;
+        animation: fade-in-out 2s ease-out;
+        z-index: 10;
+    }
+
+    // Optional Fade animation
+    @keyframes fade-in-out {
+        0% {
+            opacity: 0;
+            transform: translate(10px, -50%) scale(0.95);
+        }
+
+        10% {
+            opacity: 1;
+            transform: translate(10px, -50%) scale(1);
+        }
+
+        90% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+            transform: translate(10px, -50%) scale(0.95);
+        }
+        
+    }
+    // ----------------------- Email Section ends -----------------------
+
+    
+}
+
+
+
+
+
+

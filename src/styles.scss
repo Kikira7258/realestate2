@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import 'styles/variables';
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Cormorant+Upright:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ p {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    margin: 20px 20% 0px 20%;
+    font-family: $font-body;
+    font-size: 16px;
+    color: $color-text;
+    line-height: 1.6;
+    background: $color-background;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-heading;
+    // font-weight: $font-weight-bold;
+    color: $color-text;
+}

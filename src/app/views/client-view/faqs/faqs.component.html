@@ -1,0 +1,67 @@
+<!-- FAQ Container -->
+<div class="faq-container container my-5">
+
+    <!-- Section Title -->
+    <h1 class="mb-4 text-center">Frequently Asked Questions</h1>
+
+    <!-- Bootstrap Accordion Component -->
+    <div class="accordion">
+        
+
+        <!-- Loop through each FAQ item -->
+        <div class="accordion-item" *ngFor="let faq of faqs; let i = index">
+
+            <!-- Accordion Header -->
+            <h2 class="accordion-header" [id]="'heading' + i">
+                <button
+                   class="accordion-button" 
+                   [ngClass]="{ collapsed: openIndex !== i }"
+                   type="button"
+                   (click)="toggleFaq(i)"
+                   [attr.aria-expanded]="openIndex === i"
+                   [attr.aria-controls]="'collapse' + i"
+                >
+                     {{faq.question}}
+                </button>
+            </h2>
+
+            <!-- Accordion Body (collapse content) -->
+            <div
+            [id]="'collapse' + i"
+            class="accordion-collapse collapse"
+            [ngClass]="{show: openIndex === i}"
+            [attr.aria-labelledby]="'heading' + i"
+            >
+                <div class="accordion-body">
+                    {{faq.answer}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <div class="email-container mt-5">
+        <p class="question">Have any other questions?</p>
+        <p class="mb-4">Don't hesitate to send us an email with your inquiry at @</p>
+        <div class="button-container ">
+            <button class="copy-button p-2 rounded-2" (click)="copyEmail()">
+                {{ email }}
+                <span class="ms-2">
+                    <i class="fa-solid fa-copy"></i>
+                </span>
+            </button>
+
+            <div *ngIf="copied" class="copied-message">
+                Copied!
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- First item expanded by default -->
+<!-- [attr.aria-expanded]="i === 0 ? 'true' : 'false'" -->
+
+<!-- Collapse all but first by default -->
+<!-- [ngClass]="{ collapsed: i !== 0 }" -->
