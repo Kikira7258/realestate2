@@ -1,0 +1,21 @@
+@use 'src/styles/variables' as *;
+
+footer {
+    background-color: $color-primary;
+    color: $color-secondary;
+    
+    h6 {      
+        color: $color-secondary;
+    }
+    text-align: center;
+
+    .main-content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .sub-container {
+        max-width: 22rem;
+    }
+
+}
