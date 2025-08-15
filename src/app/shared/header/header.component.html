@@ -1,16 +1,48 @@
-<nav>
-    <div class="logo-container">
-        <div class="logo-black">
-            <div class="logo-gold"></div>
-        </div>
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <!-- Logo -->
+         <a class="navbar-brand d-flex align-items-center" routerLink="/home">
+             <div class="logo-container">
+                 <div class="logo-black">
+                     <div class="logo-gold"></div>
+                 </div>
+             </div>
+         </a>
+
+         
+         <!-- Toggler for mobile -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+
+          <!-- Navbar links -->
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+              <ul class="navbar-nav">
+                  <li class="nav-item" routerLink="/home">
+                    <a class="nav-link">Home</a>
+                  </li>
+                  <li class="nav-item" routerLink="listings">
+                    <a class="nav-link">Listings</a>
+                  </li>
+                  <li class="nav-item" routerLink="about">
+                    <a class="nav-link">About</a>
+                  </li>
+                  <li class="nav-item" routerLink="contact">
+                    <a class="nav-link">Contact</a>
+                  </li>
+                  <li class="nav-item" routerLink="faqs">
+                    <a class="nav-link">FAQs</a>
+                  </li>
+              </ul>
+          </div>
     </div>
-
-
-    <ul>
-        <li routerLink="/home">Home</li>
-        <li routerLink="listings">Listings</li>
-        <li routerLink="about">about</li>
-        <li routerLink="contact">contact</li>
-        <li routerLink="faqs">FAQs</li>
-    </ul>
 </nav>
