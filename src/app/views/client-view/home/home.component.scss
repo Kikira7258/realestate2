@@ -1,0 +1,36 @@
+@use 'src/styles/variables' as *;
+
+.hero {
+    background: url(../../../../assets/images/house0.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    position: relative;
+
+    .side-note {
+        max-width: 480px;
+        background-color: rgba($color: $white, $alpha: 0.7);
+        padding: 2rem;
+        position: absolute;
+        left: 2rem;
+        top: 2rem;
+    }
+
+    .filter-container {
+        background-color: $white;
+        // width: 100%;
+        position: absolute;
+        bottom: 2rem;
+        // margin-left: auto;
+        // margin-right: auto;
+
+        input {
+            background-color: rgba($color: $color-secondary, $alpha: 0.7);
+        }
+
+        button {
+            background-color: rgba($color: $color-accent, $alpha: 1.0);
+        }
+        
+    }
+}
