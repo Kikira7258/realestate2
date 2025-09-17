@@ -1,5 +1,5 @@
 <!-- Hero Section -->
- <div class="hero container py-5">
+ <div class="hero py-5">
     <!-- Side Note -->
      <div class="side-note rounded shadow mb-4">
         <h2>Find your house & start your happy life forever</h2>
@@ -11,8 +11,106 @@
         <form class="row g-3">
             <!-- Property Type -->
              <div class="col-12 col-md-3">
-                <select class="form-select"></select>
+                <select class="form-select">
+                  <option selected disabled>Property Type</option>
+                  <option>House</option>
+                  <option>Apartment</option>
+                  <option>Villa</option>
+                </select>
              </div>
+
+            <!-- MLS/Property ID -->
+              <div class="col-12 col-md-3">
+               <input type="text" class="form-control" placeholder="MLS/Property ID">
+              </div>
+
+            <!-- Price Range -->
+             <div class="col-12 col-md-2">
+               <select class="form-select">
+                  <option selected disabled>Price Range</option>
+                  <option>$100k - $300k</option>
+                  <option>$300k - $500k</option>
+                  <option>$500k+</option>
+               </select>
+             </div>
+
+            <!-- Rent/Sale -->
+             <div class="col-12 col-md-2">
+               <select class="form-select">
+                  <option selected disabled>Rent/Sale</option>
+                  <option>Rent</option>
+                  <option>Sale</option>
+               </select>
+             </div>
+
+             <!-- Search -->
+              <div class="col-12 col-md-2">
+               <button type="sumbit" class="btn btn-primary w-100">Search</button>
+              </div>
         </form>
       </div>
  </div>
+
+
+
+ <!-- Featured Properties -->
+  <section class="featured-properties py-5">
+   <div class="container">
+      <h2 class="section-title text-center mb-5">Featured Luxury Properties</h2>
+      <div class="row g-4">
+         <div class="col-12 col-md-4">
+            <div class="property-card position-relative rounded overflow-hidden">
+               <img class="img-fluid" alt="Perperty">
+               <div class="property-overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column ustify-content-end p-3">
+                  <h5 class="text-white">Title</h5>
+                  <p class="text-white-50">Location</p>
+                  <p class="fw-bold text-white">Price</p>
+                  <a class="btn btn-gold w-100">View Details</a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+  </section>
+
+
+  <!-- About / Brand -->
+   <section class="about-us py-5 bg-light">
+      <div class="container text-center">
+         <h2>ShyLux - Redefining Luxury Real Estate</h2>
+         <p class="lead mx-auto" style="max-width: 600px;">Discover our curated portfolio of high-end homes and investment properties. Our team guides you through a seamless, bespoke experience.</p>
+      </div>
+   </section>
+
+
+   <!-- Testimonials Carousel -->
+    <section class="testimonials py-5 bg-dark text-white">
+      <div class="container">
+         <h2 class="section-title text-center mb-5">Client Testimonials</h2>
+         <div class="testimonials-carousel">
+            <div class="testimonials-card p-4 rounded shadow mb-4">
+               <p class="fst-italic">"ShyLux found us the perfect villa. Every step was handled with care luxury in mind."</p>
+               <h6 class="mt-3 mb-0">John Doe</h6>
+               <small>Homeowner</small>
+            </div>
+            <div class="testimonials-card p-4 rounded shadow mb-4">
+               <p class="fst-italic">Professional, elegant, and seamless service. highly recommended for premium properties</p>
+               <h6 class="mt-3 mb-0">Jane Smith</h6>
+               <small>Investor</small>
+            </div>
+         </div>
+      </div>
+    </section>
+
+
+    <!-- CTA -->
+     <section class="cta py-5 text-center">
+      <div class="container">
+         <h2>Ready to Find Your Dream Home?</h2>
+         <p>Contact us today and experience luxury living like never before.</p>
+         <a routerLink="/contact" class="btn btn-gold btn-lg mt-3">Get Started</a>
+      </div>
+     </section>
+
+
+

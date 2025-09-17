@@ -1,36 +1,173 @@
 @use 'src/styles/variables' as *;
 
 .hero {
-    background: url(../../../../assets/images/house0.jpg);
-    background-repeat: no-repeat;
+    background: url(../../../../assets/images/house0.jpg) no-repeat center/cover;
     background-size: cover;
-    height: 50vh;
-    position: relative;
+    padding: 0 1rem;
+    color: $color-text;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .side-note {
+        width: 100%;
         max-width: 480px;
-        background-color: rgba($color: $white, $alpha: 0.7);
+        background-color: rgba($color: $white, $alpha: 0.85);
         padding: 2rem;
-        position: absolute;
-        left: 2rem;
-        top: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 8px 20px rgba($black, 0.1);
+        // text-align: center;
+        margin-bottom: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media (min-width: $breakpoint-lg) {
+            margin-left: 2rem; // Subtle spacing from left
+            margin-right: auto;
+        }
+
+        h2 {
+            font-family: $font-heading;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-family: $font-body;
+            color: $color-secondary;
+            line-height: 1.5;
+        }
     }
 
     .filter-container {
+        width: 100%;
+        max-width: 1100px;
         background-color: $white;
-        // width: 100%;
-        position: absolute;
-        bottom: 2rem;
-        // margin-left: auto;
-        // margin-right: auto;
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: 0 8px 20px rgba($black, 0.1);
+        margin-top: 2rem;
 
-        input {
-            background-color: rgba($color: $color-secondary, $alpha: 0.7);
+        @media (max-width: $breakpoint-lg) {
+            margin-top: 2rem;
+        }
+        
+        .form-control,
+        .form-select {
+            border: 1px solid $color-secondary;
+            border-radius: 0.75rem; // slightly rounder for luxury feel
+            background-color: $white;
+            padding: 0.5rem 1rem;
         }
 
         button {
-            background-color: rgba($color: $color-accent, $alpha: 1.0);
-        }
-        
+            background-color: $color-accent;
+            border: none;
+            color: $white;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: darken($color: $color-accent, $amount: 10%);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba($color: $black, $alpha: 0.15);
+            }
+        }   
+    }
+
+    @media (max-width: $breakpoint-md) {
+        padding: 4rem 1rem; // more comfortable spacing on small screens
     }
 }
+
+
+// Featured Properties
+.featured-properties {
+    .section-title {
+        font-family: $font-heading;
+        margin-bottom: 3rem;
+    }
+
+    .property-card {
+        overflow: hidden;
+        border-radius: 1rem;
+        box-shadow: 0 12px 30px rgba($black, 0.15);
+        position: relative;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.03);
+        }
+
+        img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .property-overlay {
+            background: linear-gradient(to top, rgba($black, 0.6), transparent);
+            padding: 1rem;
+
+            h5, p, .btn-gold {
+                color: $white;
+            }
+            .btn-gold {
+                background-color: $color-accent;
+                border-radius: 0.5rem;
+            }
+        }
+    }  
+}
+
+    .about-us {
+        h2 {
+            font-family: $font-heading;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-family: $font-body;
+            font-size: 1.1rem;
+            color: $color-text;
+            line-height: 1.7;
+        }
+    }
+
+    .testimonials {
+        .section-title {
+            font-family: $font-heading;
+            margin-bottom: 3rem;
+            color: $color-accent;
+        }
+
+        .testimonial-card {
+            background: rgba($color: $white, $alpha: 0.95);
+            color: $color-text;
+            border-radius: 1rem;
+            padding: 2rem;
+            font-family: $font-body;
+        }
+    }
+
+    .cta {
+        background-color: $color-accent;
+        color: $white;
+        padding: 4rem 2rem;
+
+        h2 {
+            font-family: $font-heading;
+            font-size: 2rem;
+        }
+
+        p {
+            font-family: $font-body;
+            font-size: 1.1rem;
+        }
+
+        .btn-gold {
+            background-color: $white;
+            color: $color-primary;
+            font-weight: 600;
+        }
+    }
