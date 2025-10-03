@@ -1,1 +1,74 @@
-<p>sidebar works!</p>
+<!-- Toggle button for mobile -->
+ <button class="btn btn-accent d-lg-none mb-3" type="button" (click)="toggleOffcanvas()">Filters</button>
+
+ <!-- Mobile Offcanvas -->
+  <div>
+    <div *ngIf="isOffcanvasOpen" class="offcanvas-wrapper">
+      <!-- Backdrop -->
+       <div class="offcanvas-backdrop" (click)="closeOffcanvas()"></div>
+
+       <!-- Sidebar Panel -->
+        <div class="offcanvas-panel" (click)="$event.stopPropagation()">
+          <div class="offcanvas-header">
+              <h5 class="offcanvas-title">Filters</h5>
+              <button type="button" class="btn-close" (click)="closeOffcanvas()"></button>
+          </div>
+          <div class="offcanvas-body p-0">
+            <ng-container *ngTemplateOutlet="sidebarContent"></ng-container>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  
+<!-- Sidebar content for large screens -->
+ <div class="d-none d-lg-block">
+  <ng-container *ngTemplateOutlet="sidebarContent"></ng-container>
+ </div>
+
+<!-- Sidebar template -->
+ <ng-template #sidebarContent>
+    <div class="sidebar p-3 bg-white shadow-sm">
+        <!-- Search -->
+         <div class="filter-group mb-4">
+            <input 
+            type="text"
+            class="form-control search-input"
+            placeholder="Search properties..."
+            [(ngModel)]="searchTerm"
+            (input)="onSearch()"
+            >
+         </div>
+    
+    <!-- Buy/Rent -->
+     <div class="filter-group mb-3" *ngFor="let filter of filterGroups">
+        <button class="btn btn-toggle w-100 text-start" (click)="toggleDropdown(filter.key)">{{filter.label}}</button>
+        <div class="dropdown-content" [class.show]="dropdowns[filter.key]">
+            <div class="form-check" *ngFor="let option of filter.options">
+                <input class="form-check-input" type="checkbox" [id]="option" [(ngModel)]="selected[filter.key][option]">
+                <label class="form-check-label" [for]="option">{{option}}</label>
+            </div>
+        </div>
+     </div>
+
+     <!-- Apply / Clear buttons -->
+      <div class="d-flex justify-content-between mt-4">
+        <button class="btn btn-primary" (click)="applyFilters()">Apply</button>
+        <button class="btn btn-outline-secondary" (click)="clearFilters()">Clear All</button>
+      </div>
+    </div>
+ </ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

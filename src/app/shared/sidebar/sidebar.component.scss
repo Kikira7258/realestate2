@@ -1,0 +1,109 @@
+@use 'src/styles/variables' as *;
+
+.offcanvas-wrapper {
+    position: fixed;
+    inset: 0;
+    z-index: 1050;
+    display: flex;
+    align-items: stretch;
+}
+
+.offcanvas-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1040;
+}
+
+.offcanvas-panel {
+    position: relative;
+    z-index: 1060;
+    width: 320px;
+    max-width: 86%;
+    height: 100%;
+    background: $white;
+    border-radius: 0 12px 12px 0;
+    overflow-y: auto;
+    animation: slideIn 0.3s ease forwards;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+.sidebar {
+    background: $color-background;
+    font-family: $font-body;
+    border-radius: 12px;
+    padding: 1.5rem;
+    
+    .sidebar-title {
+        font-family: $font-heading;
+        font-weight: $font-weight-bold;
+        color: $color-primary;
+        font-size: 1.5rem;
+    }
+
+    .btn-toggle {
+        background: none;
+        border: none;
+        font-weight: $font-weight-bold;
+        color: $color-primary;
+        font-family: $font-heading;
+        padding: 0.5rem 0;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+
+
+    .dropdown-content {
+        display: none;
+        padding-left: 1rem;
+        margin-top: 0.5rem;
+        
+        &.show {
+            display: block;
+        }
+        
+        .form-check-label {
+            font-family: $font-body;
+            color: $color-secondary;
+        }
+
+        .form-check-input {
+            accent-color: $color-accent;
+        }
+    }
+
+    .search-input {
+        border-radius: 8px;
+        border: 1px solid $color-secondary;
+        padding: 0.5rem 1rem;
+        font-family: $font-body;
+        color: $color-text;
+
+        &:focus {
+            outline: none;
+            border-color: $color-accent;
+            box-shadow: 0 0 5px rgba($color-accent, 0.5);
+        }
+    }
+}
+
+
+// Mobile toggle button
+.btn-accent {
+    background-color: $color-accent;
+    color: $white;
+    border-radius: 8px;
+    font-weight: $font-weight-bold;
+    padding: 0.5rem 1rem;
+}
+
